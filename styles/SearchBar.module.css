@@ -1,0 +1,36 @@
+.searchContainer {
+  grid-area: searchBar;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.searchIcon {
+  flex-basis: 35px;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.searchBar:focus {
+  outline: none;
+  border-bottom: 1px solid var(--clr-primary-200);
+}
+
+@media (min-width: 40em) and (max-width: 60em) {
+  .searchContainer {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 60em) {
+  .searchContainer {
+    gap: 1.5rem;
+    padding: 0;
+  }
+}

@@ -1,0 +1,52 @@
+.profileContainer {
+  margin-top: auto;
+  position: relative;
+}
+
+.photo {
+  border: white 1.5px solid;
+  border-radius: 100vmax;
+}
+
+.accountContainer {
+  position: absolute;
+  display: grid;
+  justify-content: space-evenly;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0 0 30px 1px black;
+  padding: 1rem;
+  background-color: var(--clr-primary-200);
+  top: 35px;
+  width: 100px;
+  right: 0;
+}
+
+.accountContainer a {
+  color: var(--clr-neutral-100);
+}
+
+@media (min-width: 40em) and (max-width: 60em) {
+  .photo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .accountContainer {
+    top: 45px;
+  }
+}
+
+@media (min-width: 60em) {
+  .photo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .accountContainer {
+    grid-auto-flow: column;
+    width: 175px;
+    top: 0px;
+    left: 50px;
+  }
+}

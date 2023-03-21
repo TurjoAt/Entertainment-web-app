@@ -1,0 +1,56 @@
+.headerContainer {
+  display: flex;
+  width: 100%;
+  margin-inline: auto;
+  padding: 1.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navContainer {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navContainer svg {
+  fill: var(--clr-primary-200);
+}
+
+.navContainer svg:hover {
+  fill: var(--clr-accent);
+}
+
+.icon {
+  width: 32px;
+  height: 25px;
+}
+
+@media (min-width: 40em) and (max-width: 60em) {
+  .headerContainer {
+    border-radius: 0.7rem;
+  }
+
+  .navContainer {
+    display: flex;
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 60em) {
+  .headerContainer {
+    position: fixed;
+    width: 6rem;
+    flex-direction: column;
+    justify-content: start;
+    padding: 2rem;
+    height: 85vh;
+    max-height: 800px;
+    gap: 3rem;
+    border-radius: 1.2rem;
+  }
+
+  .navContainer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
