@@ -9,6 +9,7 @@
 
 .navContainer {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -44,13 +45,15 @@
     justify-content: start;
     padding: 2rem;
     height: 85vh;
+    min-height: 400px;
     max-height: 800px;
-    gap: 3rem;
     border-radius: 1.2rem;
+    gap: 2rem;
   }
 
   .navContainer {
     flex-direction: column;
+    padding-top: 3rem;
     gap: 2rem;
   }
 }

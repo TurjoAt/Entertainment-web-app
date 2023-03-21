@@ -15,7 +15,7 @@ const BookmarkSeries = () => {
   console.log(bookmarkedSeries.length);
 
   return (
-    <>
+    <article>
       <h1 className="padding-inline fs-l-primary-heading fw-light">
         Bookmarked TV Series
       </h1>
@@ -28,7 +28,7 @@ const BookmarkSeries = () => {
           <MovieCard show={item} key={uuid()} />
         ))}
       </div>
-    </>
+    </article>
   );
 };
 

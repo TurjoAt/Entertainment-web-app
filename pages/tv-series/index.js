@@ -19,13 +19,15 @@ const TvSeries = () => {
       </Head>
       <Layout>
         <div className="showListContainer">
-          <h1 className="padding-inline fs-l-primary-heading fw-light">
-            TV Series
-          </h1>
-          <div className="showCardContainer | padding-inline padding-block-top padding-block-bottom">
-            {seriesCollection.map((item) => (
-              <MovieCard show={item} key={uuid()} />
-            ))}
+          <div class="sectionWrapper">
+            <h1 className="padding-inline fs-l-primary-heading fw-light">
+              TV Series
+            </h1>
+            <div className="showCardContainer | padding-inline padding-block-top padding-block-bottom">
+              {seriesCollection.map((item) => (
+                <MovieCard show={item} key={uuid()} />
+              ))}
+            </div>
           </div>
         </div>
       </Layout>

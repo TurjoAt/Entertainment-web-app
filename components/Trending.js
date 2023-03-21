@@ -9,14 +9,14 @@ const Trending = () => {
 
   // padding-block-top padding-block-bottom
   return (
-    <div>
+    <article>
       <h1 className="padding-inline fs-l-primary-heading fw-light">Trending</h1>
       <div className="trendingShowContainer | padding-inline padding-block-top padding-block-bottom">
         {trendingCollection.map((item) => (
           <MovieCard show={item} key={uuid()} container="trending" />
         ))}
       </div>
-    </div>
+    </article>
   );
 };
 

@@ -12,7 +12,7 @@ const BookmarkMovie = () => {
     (item) => item.category === "Movie"
   );
   return (
-    <>
+    <article>
       <h1 className="padding-inline fs-l-primary-heading fw-light">
         Bookmarked Movies
       </h1>
@@ -25,7 +25,7 @@ const BookmarkMovie = () => {
           <MovieCard show={item} key={uuid()} />
         ))}
       </div>
-    </>
+    </article>
   );
 };
 

@@ -146,13 +146,16 @@ body {
 
 .showListContainer {
   grid-area: showList;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   width: 100%;
   margin-inline: auto;
   max-width: 1440px;
 }
 
 .showCardContainer.alignSearch {
-  grid-template-columns: repeat(auto-fit, 330px);
+  grid-template-columns: repeat(auto-fit, 160px);
 }
 
 @media (min-width: 40em) and (max-width: 60em) {
@@ -182,8 +185,15 @@ body {
     grid-auto-columns: 470px;
     grid-auto-rows: 230px;
     grid-auto-flow: column;
-    gap: 2.5rem;
     max-width: 93vw;
+  }
+
+  .showListContainer {
+    gap: 1rem;
+  }
+
+  .showCardContainer.alignSearch {
+    grid-template-columns: repeat(auto-fit, 270px);
   }
 }
 
@@ -198,7 +208,7 @@ body {
 
     --padding-inline: 0;
     --padding-block-top: 2rem;
-    --padding-block-bottom: 3rem;
+    --padding-block-bottom: 2.5rem;
   }
 
   .showCardContainer {
@@ -216,6 +226,14 @@ body {
     grid-auto-flow: column;
     gap: 2.5rem;
     max-width: 78vw;
+  }
+
+  .showListContainer {
+    gap: 1.5rem;
+  }
+
+  .showCardContainer.alignSearch {
+    grid-template-columns: repeat(auto-fit, 330px);
   }
 }
 
@@ -241,6 +259,25 @@ body {
     grid-auto-flow: column;
     gap: 2.5rem;
   }
+}
+
+/* scroll bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--clr-primary-200);
+  border-radius: 2px;
 }
 
 /* utility classes */
