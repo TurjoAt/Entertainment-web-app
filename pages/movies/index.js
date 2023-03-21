@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import MovieCard from "@/components/MovieCard";
-import styles from "@/styles/Movies.module.css";
+// import styles from "@/styles/Movies.module.css";
 import { useShow } from "@/components/ShowProvider";
 import uuid from "react-uuid";
 
