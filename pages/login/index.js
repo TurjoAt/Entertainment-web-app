@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import styles from "/styles/Login.module.css";
 
 const Login = () => {
   return (
@@ -11,41 +12,46 @@ const Login = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <svg width="33" height="27" xmlns="http://www.w3.org/2000/svg">
+      <main className={styles.loginContainer}>
+        <svg
+          className={styles.logo}
+          width="33"
+          height="27"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             d="m26.463.408 3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-1.6a3.186 3.186 0 0 0-3.184 3.2l-.016 19.2a3.2 3.2 0 0 0 3.2 3.2h25.6a3.2 3.2 0 0 0 3.2-3.2V.408h-6.4Z"
             fill="#FC4747"
           />
         </svg>
-        <section className="bg-primary-600">
+        <form className={`${styles.formContainer} bg-primary-600`} action="GET">
           <h1 className="fs-l-primary-heading fw-light">Login</h1>
-          <form action="GET">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              className="bg-primary-600 text-neutral-100 fs-m-body fw-light"
-              placeholder="Email address"
-              required
-            />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              className="bg-primary-600 text-neutral-100 fs-m-body fw-light"
-              placeholder="Password"
-              required
-            />
-            <button type="submit" className="bg-accent">
-              Login to your account
-            </button>
-          </form>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            className={`${styles.inputField} | bg-primary-600 text-neutral-100 fs-m-body fw-light`}
+            placeholder="Email address"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            className={`${styles.inputField} | bg-primary-600 text-neutral-100 fs-m-body fw-light`}
+            placeholder="Password"
+            required
+          />
+          <button
+            type="submit"
+            className={`${styles.submitButton} | bg-accent`}
+          >
+            Login to your account
+          </button>
           <p>
             Don&apos;t have an account? <Link href="/sign-up">Sign Up</Link>
           </p>
-          <Link href="/">Go back</Link>
-        </section>
+        </form>
       </main>
     </>
   );

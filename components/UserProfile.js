@@ -17,7 +17,6 @@ const UserProfile = ({ showAccount, setShowAccount }) => {
       {showAccount && (
         <div className={styles.accountContainer}>
           <Link href="/sign-up">Sign-up</Link>
-          <br />
           <Link href="/login">Login</Link>{" "}
         </div>
       )}

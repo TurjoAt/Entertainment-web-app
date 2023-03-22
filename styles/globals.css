@@ -3,6 +3,7 @@
 /* global custom variables */
 :root {
   --clr-accent: #fc4747;
+  --clr-accent-light: #fc6b6b;
   --clr-primary-900: #10141e;
   --clr-primary-600: #161d2f;
   --clr-primary-200: #5a698f;
