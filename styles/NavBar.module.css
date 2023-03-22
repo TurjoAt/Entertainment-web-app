@@ -53,7 +53,7 @@
 
   .navContainer {
     flex-direction: column;
-    padding-top: 3rem;
+    padding-top: 2rem;
     gap: 2rem;
   }
 }

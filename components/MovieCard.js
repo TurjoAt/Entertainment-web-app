@@ -2,6 +2,7 @@ import React from "react";
 import { useApp } from "@/pages/_app";
 import { useShow } from "./ShowProvider";
 import styles from "/styles/ShowCard.module.css";
+import { SyncLoader } from "react-spinners";
 
 const MovieCard = ({ show: currentShow, container }) => {
   const { bookmark, onBookmarked } = useShow();
@@ -68,23 +69,36 @@ const MovieCard = ({ show: currentShow, container }) => {
     </svg>
   );
 
-  return (
+  return currentShow === undefined ? (
+    <SyncLoader />
+  ) : (
     <article
       className={`${styles.showCard} ${
         container === "trending" && styles.trendingCard
       }`}
     >
+      <button
+        className={styles.bookmarkButton}
+        onClick={() => onBookmarked(currentShow.title)}
+      >
+        {bookmarkIcon}
+      </button>
       <div
         className={`${styles.thumbnailContainer} ${
           container === "trending" && styles.trendingCard
         }`}
       >
         {resolutionSelector}
-        <button
-          className={styles.bookmarkButton}
-          onClick={() => onBookmarked(currentShow.title)}
-        >
-          {bookmarkIcon}
+        <button className={styles.playButton}>
+          <div className={styles.textWrapper}>
+            <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M15 0C6.713 0 0 6.713 0 15c0 8.288 6.713 15 15 15 8.288 0 15-6.712 15-15 0-8.287-6.712-15-15-15Zm-3 21V8l9 6.5-9 6.5Z"
+                fill="#FFF"
+              />
+            </svg>
+            Play
+          </div>
         </button>
       </div>
       <div

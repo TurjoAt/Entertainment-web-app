@@ -22,6 +22,7 @@ export default function ShowProvider({ children, data }) {
       });
     });
   }
+
   return (
     <ShowContext.Provider
       value={{ bookmark, onBookmarked: handleBookmark, data: data }}

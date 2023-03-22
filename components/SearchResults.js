@@ -2,26 +2,27 @@ import React from "react";
 import uuid from "react-uuid";
 import MovieCard from "./MovieCard";
 import data from "/data.json";
-import { useApp } from "./TabProvider";
 import { useShow } from "./ShowProvider";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 const SearchResults = ({ searchValue }) => {
-  const { currentTab } = useApp();
+  const router = useRouter();
   const { bookmark } = useShow();
-  const regex = new RegExp(`^${searchValue.toLowerCase()}[a-zA-Z]*`);
+  const regex = new RegExp(`\\b${searchValue}\\w*\\b`);
   let collection;
 
-  switch (currentTab) {
-    case "home":
+  switch (router.pathname) {
+    case "/":
       collection = data;
       break;
-    case "movies":
+    case "/movies":
       collection = data.filter((item) => item.category === "Movie");
       break;
-    case "tv-series":
+    case "/tv-series":
       collection = data.filter((item) => item.category === "TV Series");
       break;
-    case "bookmarks":
+    case "/bookmarks":
       collection = data.filter((item, index) => bookmark[index].bookmarkStatus);
       break;
     default:

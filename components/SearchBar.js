@@ -1,21 +1,22 @@
-import { useApp } from "./TabProvider";
+import { useRouter } from "next/router";
 import styles from "/styles/SearchBar.module.css";
+import { motion, AnimatePresence } from "framer-motion";
 
 const SearchBar = ({ searchValue, onChange, onBack }) => {
-  const { currentTab } = useApp();
+  const router = useRouter();
   let searchPlaceholder;
 
-  switch (currentTab) {
-    case "home":
+  switch (router.pathname) {
+    case "/":
       searchPlaceholder = "movies or TV series";
       break;
-    case "movies":
+    case "/movies":
       searchPlaceholder = "movies";
       break;
-    case "tv-series":
+    case "/tv-series":
       searchPlaceholder = "TV series";
       break;
-    case "bookmarks":
+    case "/bookmarks":
       searchPlaceholder = "bookmarked shows";
       break;
     default:
@@ -40,6 +41,7 @@ const SearchBar = ({ searchValue, onChange, onBack }) => {
           </svg>
         </button>
       )}
+
       <label htmlFor="search" className={styles.searchIcon}>
         <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
           <path

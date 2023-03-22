@@ -12,6 +12,7 @@
 
 .searchBar {
   width: 100%;
+  caret-color: var(--clr-accent);
   padding: 0.5em;
 }
 

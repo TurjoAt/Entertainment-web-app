@@ -1,11 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useApp } from "./TabProvider";
 import styles from "/styles/UserProfile.module.css";
 
 const UserProfile = ({ showAccount, setShowAccount }) => {
-  const { handleCurrentTab } = useApp();
   return (
     <div className={styles.profileContainer}>
       <Image
@@ -18,13 +16,9 @@ const UserProfile = ({ showAccount, setShowAccount }) => {
       />
       {showAccount && (
         <div className={styles.accountContainer}>
-          <Link href="/sign-up" onClick={() => handleCurrentTab("sign-up")}>
-            Sign-up
-          </Link>
+          <Link href="/sign-up">Sign-up</Link>
           <br />
-          <Link href="/login" onClick={() => handleCurrentTab("sign-up")}>
-            Login
-          </Link>{" "}
+          <Link href="/login">Login</Link>{" "}
         </div>
       )}
     </div>

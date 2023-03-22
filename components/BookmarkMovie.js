@@ -16,15 +16,45 @@ const BookmarkMovie = () => {
       <h1 className="padding-inline fs-l-primary-heading fw-light">
         Bookmarked Movies
       </h1>
-      <div
+      {bookmarkedMovies.length > 0 ? (
+        <div
+          className={`showCardContainer ${
+            bookmarkedMovies.length <= 3 && "alignCard"
+          } | padding-inline padding-block-top padding-block-bottom`}
+        >
+          {bookmarkedMovies.map((item) => (
+            <MovieCard show={item} key={uuid()} />
+          ))}
+        </div>
+      ) : (
+        <p
+          className="fs-m-primary-heading fw-light"
+          style={{
+            display: "grid",
+            placeContent: "center",
+            placeItems: "center",
+            gridAutoRows: "15vh",
+          }}
+        >
+          No bookmarked movies
+        </p>
+      )}
+      {/* <div
         className={`showCardContainer ${
           bookmarkedMovies.length <= 3 && "alignCard"
         } | padding-inline padding-block-top padding-block-bottom`}
       >
-        {bookmarkedMovies.map((item) => (
-          <MovieCard show={item} key={uuid()} />
-        ))}
-      </div>
+        {bookmarkedMovies.length > 0 ? (
+          bookmarkedMovies.map((item) => <MovieCard show={item} key={uuid()} />)
+        ) : (
+          <p
+            className="fs-m-primary-heading fw-light"
+            style={{ display: "grid", placeContent: "center" }}
+          >
+            No bookmarked movies
+          </p>
+        )}
+      </div> */}
     </article>
   );
 };

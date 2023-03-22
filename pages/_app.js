@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import App from "next/app";
-import TabProvider from "@/components/TabProvider";
 import ShowProvider from "@/components/ShowProvider";
 import showCollection from "/json/data.json";
 import path from "path";
@@ -12,9 +11,7 @@ export default function myApp({ Component, pageProps }) {
   return (
     <>
       <ShowProvider data={data}>
-        <TabProvider>
-          <Component {...pageProps} />
-        </TabProvider>
+        <Component {...pageProps} />
       </ShowProvider>
     </>
   );

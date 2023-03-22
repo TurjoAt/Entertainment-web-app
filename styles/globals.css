@@ -139,7 +139,7 @@ body {
   grid-auto-flow: column;
   gap: 1rem;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: hidden !important;
   overscroll-behavior-inline: contain;
   max-width: 98vw;
 }
@@ -224,7 +224,6 @@ body {
     grid-auto-columns: 470px;
     grid-auto-rows: 230px;
     grid-auto-flow: column;
-    gap: 2.5rem;
     max-width: 78vw;
   }
 
@@ -378,4 +377,30 @@ body {
 
 .padding-block-bottom {
   padding-bottom: var(--padding-block-bottom);
+}
+
+.tag {
+  animation-name: slide-in-out;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in-out {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
